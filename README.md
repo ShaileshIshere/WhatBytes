@@ -1,36 +1,141 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# WhatBytes - Modern E-commerce Platform
 
-## Getting Started
+A modern, responsive e-commerce web application built with Next.js 14, featuring a clean UI, shopping cart functionality, and seamless user experience.
 
-First, run the development server:
+## 📸 Screenshots
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+### Home Page
+![Home Page](./public/homepage.png)
+
+### Product Details
+![Product Details](./public/productdetails.png)
+
+### Shopping Cart
+![Shopping Cart](./public/shoppingcart.png)
+
+## 🚀 Features
+
+- **Modern UI/UX**: Clean, professional design with responsive layout
+- **Product Catalog**: Browse products with category filtering and search
+- **Shopping Cart**: Add, remove, and manage items with real-time updates
+- **Infinite Scroll**: Smooth product loading with automatic pagination
+- **Search & Filters**: Advanced filtering by category, price, and search queries
+- **Responsive Design**: Optimized for desktop, tablet, and mobile devices
+- **SEO Optimized**: Server-side rendering with proper meta tags
+- **Fast Performance**: Built with Next.js 14 and optimized for speed
+
+## 🛠️ Tech Stack
+
+- **Framework**: [Next.js 14](https://nextjs.org/) (App Router)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **UI Components**: Custom components with [Radix UI](https://www.radix-ui.com/)
+- **State Management**: [Zustand](https://zustand-demo.pmnd.rs/)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **Data Fetching**: [Fake Store API](https://fakestoreapi.com/)
+
+## 📦 Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/yourusername/whatbytes.git
+   cd whatbytes
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   # or
+   yarn install
+   # or
+   pnpm install
+   ```
+
+3. **Run the development server**
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   # or
+   pnpm dev
+   ```
+
+4. **Open your browser**
+   Navigate to [http://localhost:3000](http://localhost:3000)
+
+## 🎯 Project Structure
+
+```
+whatbytes/
+├── app/                    # Next.js App Router
+│   ├── cart/              # Shopping cart page
+│   ├── product/[id]/      # Dynamic product pages
+│   ├── about/             # About page
+│   ├── contact/           # Contact page
+│   ├── layout.tsx         # Root layout
+│   ├── page.tsx           # Home page
+│   └── globals.css        # Global styles
+├── components/            # Reusable components
+│   ├── ui/               # UI components
+│   ├── Header.tsx        # Navigation header
+│   ├── Footer.tsx        # Site footer
+│   ├── ProductCard.tsx   # Product display card
+│   ├── ProductGrid.tsx   # Product listing grid
+│   ├── SearchInput.tsx   # Search functionality
+│   └── Sidebar.tsx       # Filters sidebar
+├── lib/                  # Utility functions
+│   ├── store.ts         # Zustand store
+│   ├── types.ts         # TypeScript types
+│   ├── data.ts          # Data fetching functions
+│   └── utils.ts         # Helper utilities
+└── public/              # Static assets
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🌟 Key Features Breakdown
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 🛒 Shopping Cart
+- Add/remove products with quantity management
+- Real-time price calculations
+- Persistent cart state across sessions
+- Modern cart UI with smooth animations
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 🔍 Search & Filtering
+- Real-time product search
+- Category-based filtering
+- Price range filtering
+- URL-based filter persistence
 
-## Learn More
+### 📱 Responsive Design
+- Mobile-first approach
+- Adaptive layouts for all screen sizes
+- Touch-friendly interactions
+- Optimized for performance
 
-To learn more about Next.js, take a look at the following resources:
+### ⚡ Performance Optimizations
+- Server-side rendering (SSR)
+- Image optimization with Next.js Image component
+- Lazy loading and code splitting
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🎨 Design System
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Typography**: Inter font family
+- **Components**: Custom-built with consistent styling
+- **Responsive Breakpoints**: Mobile, Tablet, Desktop
+- **Accessibility**: WCAG compliant with proper ARIA labels
 
-## Deploy on Vercel
+## 👨‍💻 Developer
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+**Shailesh**
+- GitHub: [@shaileshkandari](https://github.com/ShaileshIshere)
+- LinkedIn: [shailesh kandari](https://www.linkedin.com/in/shailesh-kandari-a33112299/)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🙏 Acknowledgments
+
+- [Next.js](https://nextjs.org/) for the amazing framework
+- [Tailwind CSS](https://tailwindcss.com/) for the utility-first CSS
+- [Fake Store API](https://fakestoreapi.com/) for the demo data
+- [Vercel](https://vercel.com/) for hosting and deployment
+
+---
+
+**Built with ❤️ using Next.js and TypeScript**
