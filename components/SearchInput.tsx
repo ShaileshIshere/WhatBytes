@@ -1,56 +1,70 @@
-"use client"
+"use client";
 
-import type React from "react"
-import { useState, useEffect, useCallback } from "react"
-import { useRouter, useSearchParams } from "next/navigation"
-import { Search } from "lucide-react"
-import { Input } from "@/components/ui/input"
+import type React from "react";
+import { useState, useEffect, useCallback } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
+import { Search } from "lucide-react";
+import { Input } from "@/components/ui/input";
 
-export function SearchInput() {
-  const router = useRouter()
-  const searchParams = useSearchParams()
-  const [searchQuery, setSearchQuery] = useState("")
+type SearchInputProps = {
+    className?: string;
+    inputClassName?: string;
+    iconClassName?: string;
+    placeholder?: string;
+};
 
-  useEffect(() => {
-    const query = searchParams.get("search")
-    if (query) {
-      setSearchQuery(query)
-    }
-  }, [searchParams])
+export function SearchInput({
+    inputClassName = "",
+    iconClassName = "",
+    placeholder = "Search for products...",
+}: SearchInputProps) {
+    const router = useRouter();
+    const searchParams = useSearchParams();
+    const [searchQuery, setSearchQuery] = useState("");
 
-  const handleSearch = useCallback(
-    (e: React.FormEvent) => {
-      e.preventDefault()
+    useEffect(() => {
+        const query = searchParams.get("search");
+        if (query) {
+            setSearchQuery(query);
+        }
+    }, [searchParams]);
 
-      const params = new URLSearchParams(searchParams.toString())
+    const handleSearch = useCallback(
+        (e: React.FormEvent) => {
+            e.preventDefault();
 
-      if (searchQuery.trim()) {
-        params.set("search", searchQuery.trim())
-      } else {
-        params.delete("search")
-      }
+            const params = new URLSearchParams(searchParams.toString());
 
-      const newUrl = `/?${params.toString()}`
-      const currentUrl = `/?${searchParams.toString()}`
+            if (searchQuery.trim()) {
+                params.set("search", searchQuery.trim());
+            } else {
+                params.delete("search");
+            }
 
-      // Only navigate if URL actually changed
-      if (newUrl !== currentUrl) {
-        router.push(newUrl)
-      }
-    },
-    [searchQuery, searchParams, router],
-  )
+            const newUrl = `/?${params.toString()}`;
+            const currentUrl = `/?${searchParams.toString()}`;
 
-  return (
-    <form onSubmit={handleSearch} className="relative w-full">
-      <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
-      <Input
-        type="text"
-        placeholder="Search products..."
-        value={searchQuery}
-        onChange={(e) => setSearchQuery(e.target.value)}
-        className="pl-10 w-full"
-      />
-    </form>
-  )
+            // Only navigate if URL actually changed
+            if (newUrl !== currentUrl) {
+                router.push(newUrl);
+            }
+        },
+        [searchQuery, searchParams, router],
+    );
+
+    return (
+        <form onSubmit={handleSearch} className={`relative w-full`}>
+            <Search
+                className={`absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 ${iconClassName || "text-gray-400"}`}
+            />
+            <Input
+                type="text"
+                placeholder={placeholder}
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className={`pl-10 w-full bg-white rounded-md border border-gray-300 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-300 ${inputClassName}`}
+                style={{ height: "40px", boxShadow: "none" }}
+            />
+        </form>
+    );
 }
